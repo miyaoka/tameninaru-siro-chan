@@ -18,8 +18,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'tameninaru-siro-chan',
-    titleTemplate: 'tameninaru-siro-chan - %s',
+    titleTemplate: (titleChunk) => (titleChunk ? `${titleChunk} - ` : '') + 'tameninaru-siro-chan',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
