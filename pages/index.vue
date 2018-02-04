@@ -1,12 +1,11 @@
 <template>
   <section class="container">
-    <input v-model="count">
-    {{videos.length}}
+    <SiroCalendar :date.sync="date"/>
     <hr>
     <div>
       <div class="videList">
         <div
-          v-for="item in videos.slice(0, count)"
+          v-for="item in videos"
           :key="item.id"
           class="videoListItem"
         >
@@ -27,11 +26,14 @@
 <script>
 import { DateTime } from 'luxon'
 import videos from '~/static/youtubeSearch.json'
+import SiroCalendar from '~/components/SiroCalendar.vue'
 
 const descRegex = new RegExp(`^(.*?)(.?チャンネル|http).*`)
 
 export default {
-  components: {},
+  components: {
+    SiroCalendar
+  },
   filters: {
     descFilter(val) {
       return val.replace(descRegex, '$1')
@@ -40,14 +42,18 @@ export default {
       return DateTime.fromMillis(val, { zone: 'Asia/Tokyo' }).toFormat('yyyy-MM-dd')
     }
   },
+  fetch({ store }) {
+    store.commit('videos', videos)
+  },
   data() {
     return {
+      date: new Date(),
       count: 10
     }
   },
   computed: {
     videos() {
-      return videos.sort((a, b) => b.publishedAt - a.publishedAt)
+      return this.$store.state.videos.slice().sort((a, b) => b.publishedAt - a.publishedAt)
     }
   }
 }
