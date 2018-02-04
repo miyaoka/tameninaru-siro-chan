@@ -47,7 +47,6 @@ module.exports = async function youtubeSearch(moduleOptions) {
         snippet: { publishedAt, title, description, thumbnails: { medium: { url: thumbnail } } }
       } = item
       return {
-        origin: item,
         id,
         publishedAt: DateTime.fromISO(publishedAt).valueOf(),
         title,
