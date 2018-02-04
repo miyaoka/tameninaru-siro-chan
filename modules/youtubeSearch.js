@@ -15,7 +15,7 @@ const defaults = {
 
 const searchAPI = 'https://www.googleapis.com/youtube/v3/search'
 
-const search = async (params) => {
+const search = async(params) => {
   const result = await axios
     .get(searchAPI, {
       params
@@ -25,7 +25,7 @@ const search = async (params) => {
   return result && result.status === 200 ? result.data : null
 }
 
-const getData = async (options) => {
+const getData = async(options) => {
   let data
   let pageToken
   let items = []
@@ -39,12 +39,7 @@ const getData = async (options) => {
 }
 module.exports = async function youtubeSearch(moduleOptions) {
   const options = Object.assign({}, defaults, this.options.youtubeSearch, moduleOptions)
-  console.log(options, moduleOptions)
-
   const items = await getData(options)
-  let idmap = {}
-  items.map((item) => item.id.videoId).forEach((id) => (idmap[id] = idmap[id] ? idmap[id]++ : 1))
-  console.log(idmap)
   const data = JSON.stringify(
     items.map((item) => {
       const {
@@ -65,16 +60,4 @@ module.exports = async function youtubeSearch(moduleOptions) {
   this.extendBuild((config, { isClient, isServer }) => {
     fs.writeFileSync(path.resolve(path.join('static', options.exportPath)), data)
   })
-
-  // this.options.build.plugins.push({
-  //   apply(compiler) {
-  //     compiler.plugin('emit', (compilation, cb) => {
-  //       // This will generate `.nuxt/dist/info.txt' with contents of info variable.
-  //       // Source can be buffer too
-  //       compilation.assets['youtubeSearch.json'] = { source: () => data, size: () => data.length }
-
-  //       cb()
-  //     })
-  //   }
-  // })
 }
