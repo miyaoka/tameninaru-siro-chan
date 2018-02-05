@@ -2,6 +2,7 @@
   <section class="container">
     <header>
       <h1>ミックスプレイヤー</h1>
+      <div>（PC専用です）</div>
     </header>
     <main>
       <MixPlayer/>
@@ -24,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
+header {
   text-align: center;
 }
 </style>
