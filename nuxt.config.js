@@ -13,7 +13,7 @@ module.exports = {
       }
     ]
   ],
-
+  plugins: ['~/plugins/youtubeEmbed'],
   /*
   ** Headers of the page
   */
