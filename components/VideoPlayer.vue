@@ -83,7 +83,7 @@ export default {
 
       // setPlaybackQuality is not working
       // https://stackoverflow.com/questions/27022565/setplaybackquality-not-working-youtube-js-api
-      // player.setPlaybackQuality(this.quality)
+      player.setPlaybackQuality(this.quality)
 
       this.player = player
     }
