@@ -1,4 +1,5 @@
 require('dotenv').config()
+const nodeExternals = require('webpack-node-externals')
 
 const siroChannelId = 'UCLhUvJ_wO9hOvv_yYENu4fQ'
 
@@ -13,7 +14,7 @@ module.exports = {
       }
     ]
   ],
-  plugins: ['~/plugins/youtubeEmbed'],
+  plugins: ['~/plugins/youtubeEmbed', '~/plugins/vue-awesome'],
   /*
   ** Headers of the page
   */
@@ -42,7 +43,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend(config, { isDev, isClient }) {
+    extend(config, { isDev, isClient, isServer }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -50,6 +51,13 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      }
+      if (isServer) {
+        config.externals = [
+          nodeExternals({
+            whitelist: [/^vue-awesome/]
+          })
+        ]
       }
     }
   }
