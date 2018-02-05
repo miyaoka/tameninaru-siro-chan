@@ -1,5 +1,9 @@
 <template>
 <div ref="main">
+  <div class="play">
+    <button @click="playAll"><icon scale="1.2" name="play"/> 再生する</button>
+  </div>
+
   <div class="stack" v-if="true">
     <VideoPlayer
       :vid="mainVideo.id"
@@ -120,6 +124,11 @@ export default {
     }
   },
   methods: {
+    playAll() {
+      this.mainPaused = false
+      this.sePaused = false
+      this.bgmPaused = false
+    },
     ended() {
       console.log('ed')
       this.mainVideo = this.getRandomVideo()
@@ -202,5 +211,9 @@ export default {
   .text {
     grid-area: text;
   }
+}
+.play {
+  text-align: center;
+  margin: 1rem;
 }
 </style>
