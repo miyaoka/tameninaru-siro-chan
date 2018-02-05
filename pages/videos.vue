@@ -1,24 +1,25 @@
 <template>
   <section class="container">
     <header>
-      <h1>ミックスプレイヤー</h1>
+      <h1>いちらん</h1>
     </header>
     <main>
-      <VideoPlayer/>
+      <VideoList/>
     </main>
   </section>
 </template>
 
 <script>
-import videos from '~/static/youtubeSearch.json'
-import VideoPlayer from '~/components/VideoPlayer.vue'
+import VideoList from '~/components/VideoList.vue'
 
 export default {
   components: {
-    VideoPlayer
+    VideoList
   },
-  fetch({ store }) {
-    store.commit('videos', videos)
+  head() {
+    return {
+      title: 'いちらん'
+    }
   }
 }
 </script>
