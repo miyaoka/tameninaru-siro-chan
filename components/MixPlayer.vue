@@ -178,7 +178,7 @@ export default {
   grid-template-areas: 'se main bgm' 'text text text';
 
   & > * {
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
   }
   img {
