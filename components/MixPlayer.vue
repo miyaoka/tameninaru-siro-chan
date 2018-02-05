@@ -157,6 +157,7 @@ export default {
   .player {
     border-radius: 50%;
     overflow: hidden;
+    border: 2px solid #80d4ef;
   }
 }
 .role {
@@ -184,7 +185,7 @@ export default {
     width: 100%;
     cursor: pointer;
     border-radius: 1rem;
-    border: 1px solid #80d4ef;
+    border: 2px solid #80d4ef;
   }
   .buttons {
     display: grid;
