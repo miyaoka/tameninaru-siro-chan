@@ -52,7 +52,7 @@
       <div>SE</div>
       <img :src="seVideo.thumbnail" @click="seVideo = getRandomVideo()">
       <div class="buttons">
-        <button @click="sePaused = !sePaused"><icon scale="1.2" :name="sePaused ? 'pause' : 'play'"/></button>
+        <button @click="sePaused = !sePaused"><icon scale="1.2" :name="sePaused ? 'play' : 'pause'"/></button>
         <button @click="seMuted = !seMuted"><icon scale="1.2" :name="seMuted ? 'volume-off' : 'volume-up'"/></button>
       </div>
     </div>
@@ -60,7 +60,7 @@
       <div>メイン</div>
       <img :src="mainVideo.thumbnail" @click="mainVideo = getRandomVideo()">
       <div class="buttons">
-        <button @click="mainPaused = !mainPaused"><icon scale="1.2" :name="mainPaused ? 'pause' : 'play'"/></button>
+        <button @click="mainPaused = !mainPaused"><icon scale="1.2" :name="mainPaused ? 'play' : 'pause'"/></button>
         <button @click="mainMuted = !mainMuted"><icon scale="1.2" :name="mainMuted ? 'volume-off' : 'volume-up'"/></button>
       </div>
     </div>
@@ -68,7 +68,7 @@
       <div>BGM</div>
       <img :src="bgmVideo.thumbnail" @click="bgmVideo = getRandomVideo()">
       <div class="buttons">
-        <button @click="bgmPaused = !bgmPaused"><icon scale="1.2" :name="bgmPaused ? 'pause' : 'play'"/></button>
+        <button @click="bgmPaused = !bgmPaused"><icon scale="1.2" :name="bgmPaused ? 'play' : 'pause'"/></button>
         <button @click="bgmMuted = !bgmMuted"><icon scale="1.2" :name="bgmMuted ? 'volume-off' : 'volume-up'"/></button>
       </div>
     </div>
