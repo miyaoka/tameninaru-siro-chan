@@ -6,6 +6,8 @@ const siroChannelId = 'UCLhUvJ_wO9hOvv_yYENu4fQ'
 module.exports = {
   css: ['~/assets/css/reset.scss', '~/assets/css/base.scss'],
   modules: [
+    ['@nuxtjs/google-analytics', { id: 'UA-3536169-18' }],
+
     [
       '~/modules/youtubeSearch',
       {
