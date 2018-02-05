@@ -4,18 +4,18 @@
       <h1>ミックスプレイヤー</h1>
     </header>
     <main>
-      <VideoPlayer/>
+      <MixPlayer/>
     </main>
   </section>
 </template>
 
 <script>
 import videos from '~/static/youtubeSearch.json'
-import VideoPlayer from '~/components/VideoPlayer.vue'
+import MixPlayer from '~/components/MixPlayer.vue'
 
 export default {
   components: {
-    VideoPlayer
+    MixPlayer
   },
   fetch({ store }) {
     store.commit('videos', videos)
