@@ -48,7 +48,6 @@
       <div>SE</div>
       <img :src="seVideo.thumbnail" @click="seVideo = getRandomVideo()">
       <div class="buttons">
-        <button @click="seVideo = getRandomVideo()"><icon scale="1.2" name="undo"/></button>
         <button @click="sePaused = !sePaused"><icon scale="1.2" :name="sePaused ? 'pause' : 'play'"/></button>
         <button @click="seMuted = !seMuted"><icon scale="1.2" :name="seMuted ? 'volume-off' : 'volume-up'"/></button>
       </div>
@@ -57,7 +56,6 @@
       <div>メイン</div>
       <img :src="mainVideo.thumbnail" @click="mainVideo = getRandomVideo()">
       <div class="buttons">
-        <button @click="mainVideo = getRandomVideo()"><icon scale="1.2" name="undo"/></button>
         <button @click="mainPaused = !mainPaused"><icon scale="1.2" :name="mainPaused ? 'pause' : 'play'"/></button>
         <button @click="mainMuted = !mainMuted"><icon scale="1.2" :name="mainMuted ? 'volume-off' : 'volume-up'"/></button>
       </div>
@@ -66,7 +64,6 @@
       <div>BGM</div>
       <img :src="bgmVideo.thumbnail" @click="bgmVideo = getRandomVideo()">
       <div class="buttons">
-        <button @click="bgmVideo = getRandomVideo()"><icon scale="1.2" name="undo"/></button>
         <button @click="bgmPaused = !bgmPaused"><icon scale="1.2" :name="bgmPaused ? 'pause' : 'play'"/></button>
         <button @click="bgmMuted = !bgmMuted"><icon scale="1.2" :name="bgmMuted ? 'volume-off' : 'volume-up'"/></button>
       </div>
@@ -191,7 +188,7 @@ export default {
   }
   .buttons {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   button {
     border: none;
