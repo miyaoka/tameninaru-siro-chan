@@ -76,4 +76,10 @@ button {
   -webkit-appearance: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  background: transparent;
+  border: 1px solid #000;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
