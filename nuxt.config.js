@@ -3,6 +3,9 @@ const nodeExternals = require('webpack-node-externals')
 
 const siroChannelId = 'UCLhUvJ_wO9hOvv_yYENu4fQ'
 
+const title = 'ためになるシロちゃんのミックス動画プレイヤー'
+const desc = 'ためになるシロちゃんの動画をミックスするサイトです'
+
 module.exports = {
   css: ['~/assets/css/reset.scss', '~/assets/css/base.scss'],
   modules: [
@@ -26,7 +29,25 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: desc
+      },
+      {
+        property: 'og:title',
+        content: title,
+        hid: 'ogTitle'
+      },
+      { property: 'og:site_name', content: 'tameninaru-siro-chan' },
+      { property: 'og:url', content: 'https://tameninaru-siro-chan.netlify.com', hid: 'ogUrl' },
+      { property: 'og:type', content: 'article' },
+      { property: 'og:locale', content: 'ja_JP' },
+      {
+        property: 'og:description',
+        content: desc,
+        hid: 'ogDesc'
+      },
       {
         property: 'og:image',
         content: 'https://tameninaru-siro-chan.netlify.com/img/ogp-dolphin.jpg',
