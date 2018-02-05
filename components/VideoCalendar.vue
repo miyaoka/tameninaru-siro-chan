@@ -1,9 +1,9 @@
 <template>
 <div class="calendar">
   <div class="calendar-control">
-    <button @click="changeMonth(-1)">prev</button>
+    <button @click="changeMonth(-1)">前月</button>
     <div>{{year}}/{{month + 1}}</div>
-    <button @click="changeMonth(1)">next</button>
+    <button @click="changeMonth(1)">翌月</button>
   </div>
   <div class="calendar-body">
     <div
