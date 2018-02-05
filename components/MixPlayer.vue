@@ -1,7 +1,8 @@
 <template>
 <div ref="main">
   <div class="play">
-    <button @click="playAll"><icon scale="1.2" name="play"/> 再生する</button>
+    <button @click="playAll"><icon scale="1" name="play"/> 再生する</button>
+    <button @click="stopAll"><icon scale="1" name="pause"/> 全部止める</button>
   </div>
 
   <div class="stack" v-if="true">
@@ -124,10 +125,11 @@ export default {
     }
   },
   methods: {
+    stopAll() {
+      this.mainPaused = this.sePaused = this.bgmPaused = true
+    },
     playAll() {
-      this.mainPaused = false
-      this.sePaused = false
-      this.bgmPaused = false
+      this.mainPaused = this.sePaused = this.bgmPaused = false
     },
     ended() {
       console.log('ed')
