@@ -26,11 +26,12 @@ export default {
   },
   data() {
     return {
+      afterFirst: false,
       player: null,
       videoId: this.vid,
       playerVars: {
         start: 7,
-        autoplay: 1,
+        autoplay: 0,
         modestbranding: 1,
         controls: 1,
         showinfo: 1,
@@ -53,6 +54,7 @@ export default {
         this.player.removeEventListener('onVolumeChange', this.onVolumeChange)
         this.player.removeEventListener('onStateChange', this.onStateChange)
         this.player = null
+        this.afterFirst = true
       }
 
       // Force reload component to enable playerVars
@@ -77,7 +79,7 @@ export default {
       player.addEventListener('onVolumeChange', this.onVolumeChange)
       player.addEventListener('onStateChange', this.onStateChange)
       player.setVolume(this.volume)
-      player.playVideo()
+      if (this.afterFirst) player.playVideo()
 
       // setPlaybackQuality is not working
       // https://stackoverflow.com/questions/27022565/setplaybackquality-not-working-youtube-js-api
