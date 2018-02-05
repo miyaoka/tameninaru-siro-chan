@@ -73,7 +73,7 @@
         <button @click="bgmMuted = !bgmMuted"><icon scale="1.2" :name="bgmMuted ? 'volume-off' : 'volume-up'"/></button>
       </div>
     </div>
-    <div class="text">画像クリックでチェンジ</div>
+    <div class="text">（画像クリックでチェンジ）</div>
   </div>
 
 </div>
