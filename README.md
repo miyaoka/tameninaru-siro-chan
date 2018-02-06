@@ -1,6 +1,18 @@
 # tameninaru-siro-chan
 
-> Nuxt.js project
+> ためになるシロちゃんの動画をミックスして再生します
+
+https://tameninaru-siro-chan.netlify.com/
+
+## Required
+
+- [YouTube Data API Key](https://developers.google.com/youtube/v3/getting-started?hl=ja)
+
+### To set API key
+
+- Rename `.env.sample` to `.env`
+- Set your API key into `YOUTUBE_API_KEY`
+
 
 ## Build Setup
 
